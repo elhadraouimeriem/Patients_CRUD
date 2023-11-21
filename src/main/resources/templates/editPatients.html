@@ -10,48 +10,54 @@
 
 
 </head>
-<body>
+<body >
+
 <div layout:fragment="content1">
-  <div class="col-md-6 offset-3">
-    <form method="post" th:action="@{save(page=${page},keyword=${keyword})}">
+  <div class="card-header">Modifier un Patient</div>
+  <div class="card-body">
+  <div class=" container mt-4 col-md-6 offset-3">
+    <form method="post"  th:action="@{save(page=${page},keyword=${keyword})}" >
       <div>
         <label for="id">ID: </label>
         <label th:text="${patient.id}" > </label>
         <input id="id" class="form-control" type="hidden" name="id" th:value="${patient.id}">
       </div>
       <div>
-        <label for="nom">Nom</label>
+        <label for="nom">Nom:</label>
         <input id="nom" class="form-control" type="text" name="nom" th:value="${patient.nom}">
         <span class="text-danger" th:errors="${patient.nom}"></span>
       </div>
 
       <div>
-        <label for="prenom">Prénom</label>
+        <label for="prenom">Prénom:</label>
         <input id="prenom" class="form-control" type="text" name="prenom" th:value="${patient.prenom}">
         <span class="text-danger" th:errors="${patient.nom}"></span>
       </div>
 
       <div>
-        <label for="dateNaissance">Date de Naissance </label>
+        <label for="dateNaissance">Date de Naissance:</label>
         <input id="dateNaissance" class="form-control" type="date" name="dateNaissance" th:value="${patient.dateNaissance}">
         <span class="text-danger" th:errors="${patient.dateNaissance}"></span>
       </div>
 
       <div>
-        <label for="malade">Malade</label>
+        <label for="malade">Malade:</label>
         <input id="malade" type="checkbox" name="malade" th:checked="${patient.malade}">
         <span class="text-danger" th:errors="${patient.malade}"></span>
       </div>
 
       <div>
-        <label for="score">Score</label>
+        <label for="score">Score:</label>
         <input id="score" class="form-control" type="text" name="score" th:value="${patient.score}">
         <span class="text-danger" th:errors="${patient.score}"></span>
       </div>
 
-      <button type="submit" class="btn btn-primary">Save</button>
-    </form>
+      <button type="submit" class="btn btn-primary mt-3">Save</button>
+      <button type="reset" class="btn btn-primary mt-3" th:href="@{/index}">Annuler</button>
 
+    </form>
+    <button type="button"  class="btn btn-primary mt-4" onclick="window.location.href='/index'" style="background-color:black; color: white;">Back</button>
+  </div>
   </div>
 
 </div>
