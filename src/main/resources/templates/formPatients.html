@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="template1">
+      layout:decorate="template1" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Form Patients</title>
@@ -12,8 +12,12 @@
 </head>
 <body>
 <div layout:fragment="content1">
-    <div class=" container mt-4 col-md-6 offset-3">
-        <form method="post" th:action="@{save}">
+    <div class="p-3">
+        <div class="card col-md-6 offset-3">
+            <div class="card-header text-center text-uppercase ">Ajouter un nouveau Patient</div>
+            <div class="card-body bg-opacity-25">
+
+        <form method="post" th:action="@{save}" class="w-100 d-flex flex-column">
             <div>
                 <label for="nom">Nom</label>
                 <input id="nom" class="form-control" type="text" name="nom" th:value="${patient.nom}">
@@ -48,11 +52,13 @@
             <button type="reset" class="btn btn-primary mt-3">annuler</button>
 
         </form>
-        <button type="button" class="btn btn-primary mt-4" onclick="window.location.href='/index'" style="background-color:black; color: white;">Back</button>
+        <button type="button" class="btn btn-primary mt-4" onclick="window.location.href='/user/index'" style="background-color:black; color: white;">Back</button>
 
     </div>
 
     </div>
+</div>
+</div>
 </div>
 </body>
 </html>

@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <title>Patients</title>
     <link rel="stylesheet" href="/webjars/bootstrap/5.2.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="webjars/bootstrap-icons/1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/webjars/bootstrap-icons/1.10.3/font/bootstrap-icons.css">
 
 
 </head>
@@ -22,8 +22,8 @@
             <form method="get" th:action="@{/user/index}">
             <label>Keyword:</label>
                 <input type="text" name="keyword" th:value="${keyword}">
-                <button type="submit" class="btn btn-info">
-                    <i class="bi bi-search"></i>
+                <button type="submit" >
+                    <i class="bi bi-search bg-opacity-50"></i>
                 </button>
             </form>
             <table class="table">
@@ -35,7 +35,7 @@
                     <th>Date de naissance</th>
                     <th>Malade</th>
                     <th>Score</th>
-                    <th>Actions</th>
+
                 </tr>
                 <tr th:each="p:${listPatients}">
                     <td th:text="${p.id}"></td>
@@ -60,7 +60,7 @@
             <ul class="nav nav-pills">
                 <li th:each="page,status:${pages}">
                     <a th:href="@{/user/index(page=${status.index},keyword=${keyword})}"
-                       th:class="${currentPage==status.index?'btn btn-info ms-1':'btn btn-outline-info ms-1'}"
+                       th:class="${currentPage==status.index?'btn btn-info  ms-1':'btn btn-outline-info ms-1'}"
                        th:text="${1+status.index}"></a>
                 </li>
             </ul>
