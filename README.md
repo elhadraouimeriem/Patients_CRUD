@@ -133,7 +133,6 @@ bénéficient d'un accès étendu et de fonctionnalités supplémentaires.</p>
 <h3>Pages Accessibles par l'Administrateur</h3>
 <p>Les administrateurs ont des privilèges étendus et peuvent accéder à des fonctionnalités avancées pour la gestion des patients. Ils ont la possibilité de visualiser, ajouter, modifier et supprimer des données, </p>
 <img src="captures/admin_login.PNG">
-
 <ol>
 <li>Visualiser la liste des patient</li>
 <img src="captures/visualiser_patient.PNG">
