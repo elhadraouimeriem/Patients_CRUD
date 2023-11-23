@@ -60,7 +60,7 @@ Lombok, Thymeleaf et MySQL</li>
 </ul>
 </ol>
 <h2>Conception</h2>
-<img src="captures/conception.png" alt="conception image">
+<img src="captures/conception.PNG" alt="conception image">
 <h2>Réalisation</h2>
 <ol>
 <li>Création du projet spring boot avec les dépendances Web, Spring Data JPA, H2,
@@ -100,7 +100,7 @@ voila on a supprimé le patient ou l'id égale 5 et 2
 <img src="captures/validation_des_données.PNG">
 </ul>
 <li>Sécuriser cette application en intégrant un système d'authentification basé sur 
-Spring security .
+Spring security .</li>
 <h3> Installation de Spring Security</h3>
 Lors de l'installation de Spring Security, celui-ci génère automatiquement cette page d'authentification.
 <img src="captures/login.PNG">
@@ -117,8 +117,10 @@ Pour personnaliser la configuration de spring security:on creer la classe <code>
 <li>JdbcAuthentication</li>
 <p><strong>JdbcAuthentication</strong> est une méthode qui repose sur une source de données JDBC (Java Database Connectivity) pour stocker et récupérer les informations d'identification des utilisateurs. Les informations, telles que les noms d'utilisateur, mots de passe et rôles, sont stockées dans une base de données relationnelle telle que MySQL, PostgreSQL, ou H2. L'authentification se fait en interrogeant cette base de données pour vérifier les informations d'identification fournies lors de la connexion. Cette approche offre une gestion centralisée des utilisateurs, facilitant les mises à jour sans nécessiter de modifications directes dans le code de l'application.</p>
 <li>UserDetailsService</li>
-<p><strong>UserDetailsService </strong>quant à elle, est une interface de Spring Security permettant de charger les informations d'identification des utilisateurs à partir d'une source externe personnalisée. Les classes implémentant cette interface définissent leur propre logique pour charger les informations d'identification à partir de sources diverses, telles que des bases de données, des services web, ou d'autres systèmes d'authentification personnalisés. Cette méthode offre une flexibilité considérable, adaptée aux situations où la gestion des utilisateurs est complexe ou nécessite des intégrations spécifiques avec des systèmes existants. Les informations d'identification peuvent être stockées dans différentes sources, avec la logique de chargement définie selon les besoins spécifiques de l'application.</p>
+<p><strong>UserDetailsService </strong>quant à elle,est une interface de Spring Security permettant de charger les informations d'identification des utilisateurs à partir d'une source externe personnalisée. Les classes implémentant cette interface définissent leur propre logique pour charger les informations d'identification à partir de sources diverses, telles que des bases de données, des services web, ou d'autres systèmes d'authentification personnalisés. Cette méthode offre une flexibilité considérable, adaptée aux situations où la gestion des utilisateurs est complexe ou nécessite des intégrations spécifiques avec des systèmes existants. Les informations d'identification peuvent être stockées dans différentes sources, avec la logique de chargement définie selon les besoins spécifiques de l'application.</p>
+</ul>
 <li>Gérer les droits d'accès</li>
+
 <p>Pour afficher la liste des patients, nous avons utilisé Thymeleaf, un moteur
 de template, pour rendre dynamique l'affichage des données des patients. De plus,
 WebJars a été utilisé pour intégrer des styles modernes provenant de bibliothèques 
