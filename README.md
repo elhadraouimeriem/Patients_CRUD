@@ -66,7 +66,7 @@ Lombok, Thymeleaf et MySQL</li>
 <li>Création du projet spring boot avec les dépendances Web, Spring Data JPA, H2,
 Lombok, Thymeleaf qui sert à:</li>
 <ul>
-<li>Affichage des données des patients dans H2 DataBase et dans MySQL</li>
+<li>Afficher les données des patients dans H2 DataBase et dans MySQL</li>
 <h3>SQL</h3>
 <img src="captures/db_patientSql.PNG">
 <h3>H2</h3>
@@ -87,7 +87,7 @@ Lombok, Thymeleaf qui sert à:</li>
 
 <li>Supprimer un patient</li>
 <img src="captures/SupprimerPatient.PNG">
-voila on a supprimé le patient ou l'id égale 5 et 2
+voila on a supprimé les patients qui ont  les ids  5 et 2
 <img src="captures/SupprimerMeriemId5.PNG">
 
 <li>Validation des données </li>
@@ -108,7 +108,7 @@ Un mot de passe est généré et constitue le seul moyen d'accéder à cette pag
 <img src="captures/pwd.PNG">
 Pour personnaliser la configuration de spring security:on creer la classe <code>SecurityConfig</code> dans le package security.
 <img src="captures/securityConfig.PNG">
-
+<p>Voici les trois méthodes d'authentification distinctes :</p>
 
 
 <ul>
