@@ -106,7 +106,13 @@ Lors de l'installation de Spring Security, celui-ci génère automatiquement cet
 <img src="captures/login.PNG">
 Un mot de passe est généré et constitue le seul moyen d'accéder à cette page.
 <img src="captures/pwd.PNG">
-Pour personnaliser la configuration de spring security:on creer la classe <code>SecurityConfig</code> dans le package security.
+Pour personnaliser la configuration de spring security:on creer la classe <code>
+SecurityConfig</code> dans le package security.<br>
+Plutôt que d'opter pour l'approche traditionnelle avec 
+les requêtes HTTP autorisées dans la configuration de sécurité,
+nous préférons désactiver la préconfiguration en utilisant
+@EnableMethodSecurity(prePostEnabled = false). Ensuite, dans le contrôleur, nous adoptons une approche plus flexible avec l'annotation @PreAuthorize("hasRole('ROLE_ADMIN')"). Ce changement offre une gestion plus granulaire des autorisations directement au niveau des méthodes, offrant ainsi une solution plus élégante et adaptable pour définir les 
+autorisations en fonction des rôles des utilisateurs.
 <img src="captures/securityConfig.PNG">
 <p>Voici les trois méthodes d'authentification distinctes :</p>
 
@@ -116,9 +122,21 @@ Pour personnaliser la configuration de spring security:on creer la classe <code>
 <p> <strong>InMemoryAuthentication </strong>est une méthode d'authentification de Spring Security qui permet de stocker les informations d'identification directement en mémoire, particulièrement adaptée aux scénarios de développement légers ou lorsque la gestion des utilisateurs est minimale. Dans cette approche, les informations d'identification, telles que les noms d'utilisateur, mots de passe et rôles, sont configurées statiquement dans la mémoire de l'application. Cette méthode offre une gestion rapide et simple des utilisateurs au niveau de la configuration de l'application, sans nécessiter de stockage persistant, et est souvent utilisée pour des tests et des développements rapides.</p>
 <li>JdbcAuthentication</li>
 <p><strong>JdbcAuthentication</strong> est une méthode qui repose sur une source de données JDBC (Java Database Connectivity) pour stocker et récupérer les informations d'identification des utilisateurs. Les informations, telles que les noms d'utilisateur, mots de passe et rôles, sont stockées dans une base de données relationnelle telle que MySQL, PostgreSQL, ou H2. L'authentification se fait en interrogeant cette base de données pour vérifier les informations d'identification fournies lors de la connexion. Cette approche offre une gestion centralisée des utilisateurs, facilitant les mises à jour sans nécessiter de modifications directes dans le code de l'application.</p>
+<img src="captures/authorities.PNG">
+<img src="captures/users.PNG">
+
 <li>UserDetailsService</li>
 <p><strong>UserDetailsService </strong>quant à elle,est une interface de Spring Security permettant de charger les informations d'identification des utilisateurs à partir d'une source externe personnalisée. Les classes implémentant cette interface définissent leur propre logique pour charger les informations d'identification à partir de sources diverses, telles que des bases de données, des services web, ou d'autres systèmes d'authentification personnalisés. Cette méthode offre une flexibilité considérable, adaptée aux situations où la gestion des utilisateurs est complexe ou nécessite des intégrations spécifiques avec des systèmes existants. Les informations d'identification peuvent être stockées dans différentes sources, avec la logique de chargement définie selon les besoins spécifiques de l'application.</p>
+<img src="captures/app_role.PNG">
+<img src="captures/app_user.PNG">
+<img src="captures/app_role_user.PNG">
+
 </ul>
+<li>Sécuriser les données des utilisateurs</li>
+<p>
+Pour assurer la sécurité des données des utilisateurs, nous adoptons une méthode de stockage sécurisé des mots de passe. L'utilisation d'un encodeur de mot de passe, tel que BCryptPasswordEncoder, est illustrée par l'instruction passwordEncoder.encode("1234"). Cela démontre que le mot de passe "1234" est haché à l'aide de l'encodeur de mot de passe avant d'être stocké en mémoire. Cette pratique courante renforce la sécurité en stockant les mots de passe sous forme de hachages plutôt qu'en texte brut, réduisant ainsi les risques associés au stockage d'informations sensibles.</p>
+<img src="captures/stockage_pwd.PNG">
+
 <li>Gérer les droits d'accès</li>
 
 <p>Pour afficher la liste des patients, nous avons utilisé Thymeleaf, un moteur

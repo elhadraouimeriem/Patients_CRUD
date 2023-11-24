@@ -16,6 +16,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -76,6 +77,12 @@ public class PatientController {
         model.addAttribute("page",page);
         model.addAttribute("keyword",keyword);
         return "editPatients";
+    }
+
+    @GetMapping("/patients")
+    @ResponseBody//un contrôleur qui renvoie directement des données au format JSON ou XML plutôt que de renvoyer une vue
+    public List<Patient>listPatient(){
+        return patientRepository.findAll();
     }
 }
 
